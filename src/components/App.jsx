@@ -3,12 +3,17 @@ import Statistics from '../components/Statistics/Stats'
 import user from './user/user.json'
 import { Fragment } from 'react';
 import dataList from '../components/Statistics/data.json'
+import Friendlist from './Friendlist/Friendlist'
+import friends from '../components/Friendlist/friends.json'
 
 const { username, tag, location, avatar, stats } = user 
+
 export const App = () => {
   return (<Fragment>
     <Profile avatar={avatar} username={username} location={location} stats={stats} tag={tag} ></Profile>
     <Statistics dataList={dataList} statTitle={"Upload title"}></Statistics>
+        <Friendlist friends={friends} ></Friendlist>
   </Fragment>
+
     );
 };
