@@ -1,0 +1,33 @@
+.transactionHistory {
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid gray;
+  border-radius: 4px;
+  box-shadow: 1px 0 10px gray;
+  margin-bottom: 50px;
+  border-collapse: collapse;
+  color: gray;
+}
+
+.tabletHead {
+  background-color: rgb(0, 204, 255);
+  width: 115px;
+  height: 40px;
+  color: white;
+  border: 1px solid gray;
+}
+
+.tabletHead:not(:last-child) {
+  border-right: 1px solid white;
+}
+
+.tabletRow:nth-child(even) {
+  background-color: rgba(128, 128, 128, 0.474);
+}
+
+.tabletCell {
+  width: 115px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid gray;
+}
