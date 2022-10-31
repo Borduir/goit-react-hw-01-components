@@ -33,11 +33,11 @@
   background-color: red;
 }
 
-.friendAvatar {
+.avatar {
   width: 48px;
   margin-right: 10px;
 }
 
-.friendName {
+.name {
   font-weight: bold;
 }

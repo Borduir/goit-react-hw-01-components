@@ -1,17 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import css from './Stats.module.css'
+import css from './Statistics.module.css'
 
-export default function Statistics({ dataList, statTitle }) {
+export default function Statistics({ data, title }) {
     const randomColor = () => {return '#' + Math.floor(Math.random() * 16777215).toString(16)}
     return (
         <section className={css.statistics}>
-            {statTitle && (
-        <h2 className={css.title}>{statTitle}</h2>
+            {title && (
+        <h2 className={css.title}>{title}</h2>
       )}
             <ul className={css.statList}>
-                {dataList.map(data => (
+                {data.map(data => (
                     <li key={data.id} className={css.item} style={{backgroundColor: `${randomColor()}`}}>
                         <span className={css.label}>{data.label}</span>
                         <span className={css.percentage}>{data.percentage}%</span>
@@ -22,6 +22,10 @@ export default function Statistics({ dataList, statTitle }) {
     )
 }
 Statistics.propTypes = {
-    dataList: PropTypes.array.isRequired,
-    statTitle: PropTypes.string
+    data: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string,
+        label: PropTypes.string,
+        percentage: PropTypes.number
+    })).isRequired,
+    title: PropTypes.string
 }
